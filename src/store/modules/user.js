@@ -18,7 +18,7 @@ const mutations = {
 const actions = {
   login(context, data) {
     console.log(data)
-    context.commit('setToken', '123456')
+    context.commit('setToken', '123456 ')
   }
 }
 
