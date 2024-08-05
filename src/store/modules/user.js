@@ -1,5 +1,5 @@
 import { getToken, setToken, removeToken } from '@/utils/auth'
-
+import { login } from '@/api/user'
 const state = {
   token: getToken()
 }
@@ -16,9 +16,10 @@ const mutations = {
 }
 
 const actions = {
-  login(context, data) {
+  async login(context, data) {
     console.log(data)
-    context.commit('setToken', '123456 ')
+    const token = await login(data)
+    context.commit('setToken', token)
   }
 }
 
