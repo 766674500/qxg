@@ -11,3 +11,11 @@ export function getManagerList() {
     url: '/sys/user/simple'
   })
 }
+
+export function addDepartment(data) {
+  return request({
+    method: 'post',
+    url: '/company/department',
+    data
+  })
+}
