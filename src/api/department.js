@@ -5,3 +5,9 @@ export function getDepartment() {
     url: '/company/department'
   })
 }
+
+export function getManagerList() {
+  return request({
+    url: '/sys/user/simple'
+  })
+}
