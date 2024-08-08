@@ -2,7 +2,15 @@
   <div class="container">
     <div class="app-container">
       <div class="left">
-        <el-input style="margin-bottom:10px" type="text" prefix-icon="el-icon-search" size="small" placeholder="输入员工姓名全员搜索" />
+        <el-input
+          v-model="queryParams.keyword"
+          style="margin-bottom:10px"
+          type="text"
+          prefix-icon="el-icon-search"
+          size="small"
+          placeholder="输入员工姓名全员搜索"
+          @input="changeValue"
+        />
         <!-- 树形组件 -->
         <el-tree
           ref="deptTree"
@@ -81,7 +89,8 @@ export default {
       queryParams: {
         departmentId: null,
         page: 1, // 当前页码
-        pagesize: 10
+        pagesize: 10,
+        keyword: '' // 模糊搜索字段
       },
       total: 0, // 记录员工的总数
       list: [] // 存储员工列表的数据
@@ -119,6 +128,15 @@ export default {
     changePage(newPage) {
       this.queryParams.page = newPage // 赋值新页码
       this.getEmployeeList() // 查询数据
+    },
+    changeValue() {
+      // 单位时间内只执行最后一次
+      // this的实例上赋值了一个timer的属性
+      clearTimeout(this.timer) // 清理上一次的定时器
+      this.timer = setTimeout(() => {
+        this.queryParams.page = 1
+        this.getEmployeeList()
+      }, 300)
     }
   }
 }
