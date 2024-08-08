@@ -30,7 +30,7 @@
   </el-dialog>
 </template>
 <script>
-import { getDepartment, getManagerList, addDepartment } from '@/api/department'
+import { getDepartment, getManagerList, addDepartment, getDepartmentDetail } from '@/api/department'
 export default {
   name: 'AddDept',
   props: {
@@ -119,6 +119,9 @@ export default {
           this.close()
         }
       })
+    },
+    async getDepartmentDetail() {
+      this.formData = await getDepartmentDetail(this.currentNodeId)
     }
   }
 }

@@ -27,7 +27,7 @@
         </template>
       </el-tree>
     </div>
-    <add-dept :current-node-id="currentNodeId" :show-dialog.sync="showDialog" @updateDepartment="getDepartment" />
+    <add-dept ref="addDept" :current-node-id="currentNodeId" :show-dialog.sync="showDialog" @updateDepartment="getDepartment" />
   </div>
 </template>
 <script>
@@ -59,8 +59,14 @@ export default {
     operateDept(type, id) {
       if (type === 'add') {
         this.showDialog = true
+        this.currentNodeId = id
+      } else if (type === 'edit') {
+        this.showDialog = true
+        this.currentNodeId = id
+        this.$nextTick(() => {
+          this.$refs.addDept.getDepartmentDetail()
+        })
       }
-      this.currentNodeId = id
     }
   }
 }
