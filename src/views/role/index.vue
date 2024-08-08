@@ -11,20 +11,20 @@
         <el-table-column prop="name" align="center" width="200" label="角色">
           <template v-slot="{ row }">
             <!-- 条件判断 -->
-            <el-input v-if="row.isEdit" size="mini" />
+            <el-input v-if="row.isEdit" v-model="row.editRow.name" size="mini" />
             <span v-else>{{ row.name }}</span>
           </template>
         </el-table-column>
         <el-table-column prop="state" align="center" width="200" label="启用">
           <!-- 自定义列结构 -->
           <template v-slot="{ row }">
-            <el-switch v-if="row.isEdit" />
+            <el-switch v-if="row.isEdit" v-model="row.editRow.state" :active-value="1" :inactive-value="0" />
             <span v-else>  {{ row.state === 1 ? "已启用" : row.state === 0 ? "未启用" : "无" }} </span>
           </template>
         </el-table-column>
         <el-table-column prop="description" align="center" label="描述">
           <template v-slot="{ row }">
-            <el-input v-if="row.isEdit" type="textarea" />
+            <el-input v-if="row.isEdit" v-model="row.editRow.description" size="mini" type="textarea" />
             <span v-else>{{ row.description }}</span>
           </template>
         </el-table-column>
@@ -148,6 +148,10 @@ export default {
     },
     btnEditRow(row) {
       row.isEdit = true // 改变行的编辑状态
+      // 更新缓存数据
+      row.editRow.name = row.name
+      row.editRow.state = row.state
+      row.editRow.description = row.description
     }
   }
 }
