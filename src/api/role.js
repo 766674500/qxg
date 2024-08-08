@@ -22,3 +22,10 @@ export function updateRole(data) {
     data
   })
 }
+
+export function delRole(id) {
+  return request({
+    url: `/sys/role/${id}`,
+    method: 'delete'
+  })
+}
