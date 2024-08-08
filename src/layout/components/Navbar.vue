@@ -18,7 +18,7 @@
               首页
             </el-dropdown-item>
           </router-link>
-          <a target="_blank" href="https://github.com/PanJiaChen/vue-admin-template/">
+          <a target="_blank" href="https://github.com/766674500/qxg.git/">
             <el-dropdown-item>项目地址</el-dropdown-item>
           </a>
           <a target="_blank" @click.prevent="updatePassword">
