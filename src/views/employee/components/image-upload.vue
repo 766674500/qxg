@@ -46,7 +46,7 @@ export default {
         SecretKey: ''
       }) // 完成cos对象的初始化
       cos.putObject({
-        Bucket: 'heima-1328599041', // 存储桶名称
+        Bucket: '', // 存储桶名称
         Region: 'ap-nanjing', // 地域名称
         Key: params.file.name, // 文件名称
         StorageClass: 'STANDARD', // 固定值
