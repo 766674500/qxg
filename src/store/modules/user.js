@@ -1,6 +1,6 @@
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { login, getUserInfo } from '@/api/user'
-import { constantRoutes } from '@/router'
+import { constantRoutes, resetRouter } from '@/router'
 const state = {
   token: getToken(),
   userInfo: {},
@@ -38,6 +38,7 @@ const actions = {
   logout(context) {
     context.commit('removeToken') // 删除token
     context.commit('setUserInfo', {}) // 设置用户信息为空对象
+    resetRouter()
   }
 }
 
