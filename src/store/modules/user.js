@@ -1,8 +1,10 @@
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { login, getUserInfo } from '@/api/user'
+import { constantRoutes } from '@/router'
 const state = {
   token: getToken(),
-  userInfo: {}
+  userInfo: {},
+  routes: constantRoutes // 静态路由的数组
 }
 
 const mutations = {
@@ -28,6 +30,7 @@ const actions = {
   async getUserInfo(context) {
     const result = await getUserInfo()
     context.commit('setUserInfo', result)
+    return result // 返回数据
   },
   logout(context) {
     context.commit('removeToken') // 删除token
