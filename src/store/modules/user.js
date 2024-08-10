@@ -18,6 +18,9 @@ const mutations = {
   },
   setUserInfo(state, userInfo) {
     state.userInfo = userInfo
+  },
+  setRoutes(state, newRoutes) {
+    state.routes = [...constantRoutes, ...newRoutes] // 静态路由 + 动态路由
   }
 }
 
