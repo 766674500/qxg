@@ -125,9 +125,7 @@ export default {
       showRoleDialog: false, // 用来控制角色弹层的显示
       roleList: [], // 接收角色列表
       roleIds: [], // 用来双向绑定数据的
-      currentUserId: null,
-      showPermissionDialog: false,
-      permissionData: []
+      currentUserId: null
     }
   },
   created() {
