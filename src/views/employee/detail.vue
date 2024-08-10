@@ -100,7 +100,7 @@
 
 <script>
 import SelectTree from './components/select-tree.vue'
-import { addEmployee, getEmployeeDetail, updateEmployee } from '@/api/empioyoyee'
+import { addEmployee, getEmployeeDetail, updateEmployee } from '@/api/employee'
 import ImageUpload from './components/image-upload.vue'
 export default {
   components: { SelectTree, ImageUpload },

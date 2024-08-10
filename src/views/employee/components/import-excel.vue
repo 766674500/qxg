@@ -30,7 +30,7 @@
   </el-dialog>
 </template>
 <script>
-import { getExportTemplate, uploadExcel } from '@/api/empioyoyee'
+import { getExportTemplate, uploadExcel } from '@/api/employee'
 import FileSaver from 'file-saver'
 export default {
   props: {

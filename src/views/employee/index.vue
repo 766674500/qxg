@@ -96,7 +96,7 @@
 
 <script>
 import { getDepartment } from '@/api/department'
-import { getEmployeeList, exportEmployee, delEmployee, getEnableRoleList, getEmployeeDetail, assignRole } from '@/api/empioyoyee'
+import { getEmployeeList, exportEmployee, delEmployee, getEnableRoleList, getEmployeeDetail, assignRole } from '@/api/employee'
 import { transListToTreeData } from '@/utils'
 import FileSaver from 'file-saver'
 import ImportExcel from './components/import-excel.vue'
