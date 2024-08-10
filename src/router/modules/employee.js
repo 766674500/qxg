@@ -1,8 +1,8 @@
 import layout from '@/layout'
 export default {
   path: '/employee',
-  name: 'employee',
   component: layout,
+  name: 'employee',
   children: [{
     path: '',
     name: 'employee',
