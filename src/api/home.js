@@ -9,3 +9,9 @@ export function getHomeData() {
     url: '/home/data'
   })
 }
+
+export function getMessageList() {
+  return request({
+    url: '/home/notice'
+  })
+}
